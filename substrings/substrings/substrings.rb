@@ -19,29 +19,6 @@ def substrings(string, dictionary)
     # After looping through all the words in the string array, add the substring and its count to the hash if the count is greater than zero.
     substring_count.select { |substring, count| count > 0 }
     # Return the hash containing the substring counts.
-    puts substring_count
-
-    puts "-----------------"
-
-    puts string
-    puts "-----------------"
-    
-    puts dictionary
-    
-    puts "-----------------"
-    
-    puts substring_count
-
-    puts "-----------------"
-
-#    pry.binding
-# Split the string into an array of words using the split method.
-# Create an empty hash to store the substring counts.
-# Loop through each substring in the provided array.
-# For each substring, loop through each word in the string array.
-# If the substring is found in the word, increment the count of that substring in the hash.
-# After looping through all the words in the string array, add the substring and its count to the hash if the count is greater than zero.
-# Return the hash containing the substring counts.
     return substring_count
 end
 
