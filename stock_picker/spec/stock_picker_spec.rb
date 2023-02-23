@@ -2,13 +2,15 @@ require 'spec_helper'
 require_relative '../picker/stock_picker'
 
 RSpec.describe "stock_picker" do
+    it "ensures the buy day is before the sell day" do 
+      expect(stock_picker([7, 6, 5, 4, 2, 1])).to eq([4,0])
+    end 
     
-    it "returns the most profitable pair of days on which to first buy the stock and then sell the stock" do
-        expect(stock_picker([17,3,6,9,15,8,6,1,10])).to eq([1,4])
+    it "returns nil if no profit can be made" do 
+      expect(stock_picker([1,2,3])).to eq(nil)
+    end 
     
-    it "returns the most profitable pair of days on which to first buy the stock and then sell the stock" do
-        expect(stock_picker([17,3,6,9,15,8,6,1,10,20,30,40,50,60,70,80,90,100])).to eq([7,17])
-        end
-    # enter a failing test here
+    it "calculates the maximum possible profit" do 
+      expect(stock_picker([7,1,5,3,6,4])).to eq([1,4])
     end
 end
